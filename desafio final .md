@@ -17,30 +17,6 @@ O presente relatório não deve ser enviado por e-mail, fax ou qualquer outro me
 
 # 
 
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
 # **SUMÁRIO** {#sumário}
 
 [**IMPORTANTE**	2](#importante)
@@ -85,11 +61,6 @@ O presente relatório não deve ser enviado por e-mail, fax ou qualquer outro me
 
 # 
 
-# 
-
-# 
-
-# 
 
 # **1\. ESCOPO** {#1.-escopo}
 
@@ -197,7 +168,7 @@ Vulnerabilidade identificada:
 
 * Falta de segregação entre conteúdo público e interno
 
-![][image1]
+![][IMG\image4.png]
 
 ---
 
@@ -217,7 +188,7 @@ Impacto técnico:
 
 Classificação: OWASP A01 – Broken Access Control
 
-![][image2]
+![][IMG\image5.png]
 
 ---
 
@@ -235,7 +206,7 @@ Impactos:
 
 * Risco elevado de exploração
 
-![][image3]
+![][IMG\image2.png]
 
 ---
 
@@ -248,7 +219,7 @@ Vulnerabilidade:
 * Exposição de conteúdo restrito
 
 * Falha total de controle de permissões internas  
-  ![][image4]
+  ![][IMG\image7.png]
 
 ---
 
@@ -274,7 +245,7 @@ Resultado resumido:
 
 * Indícios de configuração incorreta
 
-![][image5]
+![][IMG\image9.png]
 
 ---
 
@@ -296,7 +267,7 @@ Impacto:
 
 Classificação: OWASP A06 – Security Misconfiguration
 
-![][image6]
+![][IMG\image6.png]
 
 ---
 
@@ -326,7 +297,7 @@ Impactos:
 
 Classificação: CWE-200 – Exposure of Sensitive Information
 
-![][image7]
+![][IMG\image3.png]
 
 ---
 
@@ -352,7 +323,7 @@ Impacto:
 
 * Potencial de execução remota, dependendo dos arquivos contidos
 
-![][image8]
+![][IMG\image1.png]
 
 ---
 
@@ -378,7 +349,7 @@ Impacto:
 
 * Falha crítica de configuração e permissões
 
-![][image9]
+![][IMG\image10.png]
 
 ## **7.10 ACESSO AO DIRETÓRIO /CONFIG/DATABASE.PHP.TXT** {#7.10-acesso-ao-diretório-/config/database.php.txt}
 
@@ -403,7 +374,7 @@ Impactos possíveis:
 
 * Escalonamento de privilégios
 
-![][image10]
+![][IMG\image8.png]
 
 ### **8\. CONCLUSÃO DO RELATÓRIO** {#8.-conclusão-do-relatório}
 
