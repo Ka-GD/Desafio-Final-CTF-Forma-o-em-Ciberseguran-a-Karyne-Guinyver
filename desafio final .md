@@ -168,7 +168,8 @@ Vulnerabilidade identificada:
 
 * Falta de segregação entre conteúdo público e interno
 
-![][IMG\image4.png]
+![image4](IMG/image4.png)
+
 
 ---
 
@@ -188,7 +189,8 @@ Impacto técnico:
 
 Classificação: OWASP A01 – Broken Access Control
 
-![][IMG\image5.png]
+![image5](IMG/image5.png)
+
 
 ---
 
@@ -206,7 +208,8 @@ Impactos:
 
 * Risco elevado de exploração
 
-![][IMG\image2.png]
+![image2](IMG/image2.png)
+
 
 ---
 
@@ -219,7 +222,8 @@ Vulnerabilidade:
 * Exposição de conteúdo restrito
 
 * Falha total de controle de permissões internas  
-  ![][IMG\image7.png]
+ ![image7](IMG/image7.png)
+
 
 ---
 
@@ -245,7 +249,8 @@ Resultado resumido:
 
 * Indícios de configuração incorreta
 
-![][IMG\image9.png]
+![image9](IMG/image9.png)
+
 
 ---
 
@@ -267,7 +272,8 @@ Impacto:
 
 Classificação: OWASP A06 – Security Misconfiguration
 
-![][IMG\image6.png]
+![image6](IMG/image6.png)
+
 
 ---
 
@@ -297,7 +303,8 @@ Impactos:
 
 Classificação: CWE-200 – Exposure of Sensitive Information
 
-![][IMG\image3.png]
+![image3](IMG/image3.png)
+
 
 ---
 
@@ -323,7 +330,8 @@ Impacto:
 
 * Potencial de execução remota, dependendo dos arquivos contidos
 
-![][IMG\image1.png]
+![image1](IMG/image1.png)
+
 
 ---
 
@@ -349,7 +357,8 @@ Impacto:
 
 * Falha crítica de configuração e permissões
 
-![][IMG\image10.png]
+![image10](IMG/image10.png)
+
 
 ## **7.10 ACESSO AO DIRETÓRIO /CONFIG/DATABASE.PHP.TXT** {#7.10-acesso-ao-diretório-/config/database.php.txt}
 
@@ -374,7 +383,8 @@ Impactos possíveis:
 
 * Escalonamento de privilégios
 
-![][IMG\image8.png]
+![image8](IMG/image8.png)
+
 
 ### **8\. CONCLUSÃO DO RELATÓRIO** {#8.-conclusão-do-relatório}
 
