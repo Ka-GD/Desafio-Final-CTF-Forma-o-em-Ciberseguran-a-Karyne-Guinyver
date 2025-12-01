@@ -19,23 +19,23 @@ O presente relatório não deve ser enviado por e-mail, fax ou qualquer outro me
 
 # **SUMÁRIO** 
 
-[**IMPORTANTE**	2]
+[**IMPORTANTE**]
 
-[**SUMÁRIO	3**]
+[**SUMÁRIO**]
 
-[**1\. ESCOPO	4**]
+[**1\. ESCOPO**]
 
-[**2\. OBJETIVO DA PESQUISA	5**]
+[**2\. OBJETIVO DA PESQUISA**]
 
-[**3\. CONTATO	5**]
+[**3\. CONTATO**]
 
-[**4\. DECLARAÇÃO DE LIMITE DE RESPONSABILIDADE	6**]
+[**4\. DECLARAÇÃO DE LIMITE DE RESPONSABILIDADE**]
 
-[**5\. DATA DOS TESTES	6**]
+[**5\. DATA DOS TESTES**]
 
-[**6\. METODOLOGIA UTILIZADA	6**]
+[**6\. METODOLOGIA UTILIZADA**]
 
-[**7\. EVIDÊNCIAS E VULNERABILIDADES ENCONTRADAS	6**]
+[**7\. EVIDÊNCIAS E VULNERABILIDADES ENCONTRADAS**]
 
 [7.1 ACESSO INICIAL AO SITE]
 
@@ -350,7 +350,7 @@ Impacto:
 
 * Potencial de execução remota, dependendo dos arquivos contidos
 
-![image1](IMG/image1.png)
+
 
 ![gobuster](/IMG/gobuster.png)
 
@@ -411,9 +411,11 @@ Impactos possíveis:
 ## **7.11 SQLMAP/ACESSO AO BACO DE DADOS** 
 
 * Durante a análise do endpoint /login.php, foi utilizada a ferramenta SQLMAP para verificar a presença de SQL Injection no parâmetro username. O teste foi executado a partir do formulário detectado.
+
 ![Database](/IMG/dadosDatabase.png)
 
-Após confirmar a vulnerabilidade, o SQLMAP foi autorizado a explorar o banco de dados.
+Após confirmar a vulnerabilidade, explorei o banco de dados.
+
 ![DatabaseFlag](/IMG/DatabaseFlag.png)
 
 ## **7.12 PANEL** 
@@ -477,7 +479,7 @@ Com MFA e rate-limiting.
 
 Backups nunca devem ficar acessíveis da web.
 
-### **9\. CONCLUSÃO DO RELATÓRIO** {#9.-conclusão-do-relatório}
+### **9\. CONCLUSÃO DO RELATÓRIO** 
 
 Os testes realizados no ambiente CTF mostraram diversas vulnerabilidades críticas que permitiram acesso a informações internas, arquivos sensíveis, diretórios expostos e serviços mal configurados. A combinação dessas falhas demonstrou que qualquer usuário externo poderia comprometer o sistema sem dificuldade, revelando ausência de controles de acesso, falhas de autenticação e má configuração geral do servidor.
 
