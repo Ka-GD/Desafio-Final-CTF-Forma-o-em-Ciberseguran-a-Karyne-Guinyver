@@ -5,7 +5,7 @@
 **TechCorp Solutions**
 
 
-## **IMPORTANTE** {#importante}
+## **IMPORTANTE** 
 
 Este documento contém informações confidenciais e privilegiadas, sendo seu sigilo protegido por lei.  
 Se você não for o destinatário autorizado, não deve utilizar, copiar ou divulgar qualquer conteúdo aqui presente.  
@@ -17,53 +17,60 @@ O presente relatório não deve ser enviado por e-mail, fax ou qualquer outro me
 
 # 
 
-# **SUMÁRIO** {#sumário}
+# **SUMÁRIO** 
 
-[**IMPORTANTE**	2](#importante)
+[**IMPORTANTE**	2]
 
-[**SUMÁRIO	3**](#sumário)
+[**SUMÁRIO	3**]
 
-[**1\. ESCOPO	4**](#1.-escopo)
+[**1\. ESCOPO	4**]
 
-[**2\. OBJETIVO DA PESQUISA	5**](#2.-objetivo-da-pesquisa)
+[**2\. OBJETIVO DA PESQUISA	5**]
 
-[**3\. CONTATO	5**](#3.-contato)
+[**3\. CONTATO	5**]
 
-[**4\. DECLARAÇÃO DE LIMITE DE RESPONSABILIDADE	6**](#4.-declaração-de-limite-de-responsabilidade)
+[**4\. DECLARAÇÃO DE LIMITE DE RESPONSABILIDADE	6**]
 
-[**5\. DATA DOS TESTES	6**](#5.-data-dos-testes)
+[**5\. DATA DOS TESTES	6**]
 
-[**6\. METODOLOGIA UTILIZADA	6**](#6.-metodologia-utilizada)
+[**6\. METODOLOGIA UTILIZADA	6**]
 
-[**7\. EVIDÊNCIAS E VULNERABILIDADES ENCONTRADAS	6**](#7.-evidências-e-vulnerabilidades-encontradas)
+[**7\. EVIDÊNCIAS E VULNERABILIDADES ENCONTRADAS	6**]
 
-[7.1 ACESSO INICIAL AO SITE	6](#7.1-acesso-inicial-ao-site)
+[7.1 ACESSO INICIAL AO SITE]
 
-[7.2 EXPOSIÇÃO DE INFORMAÇÃO NO CÓDIGO-FONTE	7](#7.2-exposição-de-informação-no-código-fonte)
+[7.2 EXPOSIÇÃO DE INFORMAÇÃO NO CÓDIGO-FONTE]
 
-[7.3 CREDENCIAIS EXPOSTAS NA TELA DE LOGIN	8](#7.3-credenciais-expostas-na-tela-de-login)
+[7.3 CREDENCIAIS EXPOSTAS NA TELA DE LOGIN]
 
-[7.4 NAVEGAÇÃO INTERNA EXPONDO DADOS SENSÍVEIS	9](#7.4-navegação-interna-expondo-dados-sensíveis)
+[7.4 NAVEGAÇÃO INTERNA EXPONDO DADOS SENSÍVEIS]
 
-[7.5 VARREDURA COM NMAP	10](#7.5-varredura-com-nmap)
+[7.5 VARREDURA COM NMAP]
 
-[7.6 FLAG E DIRETÓRIOS EXPOSTOS NO ARQUIVO ROBOTS.TXT	11](#7.6-flag-e-diretórios-expostos-no-arquivo-robots.txt)
+[7.6 FLAG E DIRETÓRIOS EXPOSTOS NO ARQUIVO ROBOTS.TXT]
 
-[7.7 FTP SEM AUTENTICAÇÃO (ANONYMOUS LOGIN)	12](#7.7-ftp-sem-autenticação-\(anonymous-login\))
+[7.7 FTP SEM AUTENTICAÇÃO (ANONYMOUS LOGIN)]
 
-[7.8 ENUMERAÇÃO DE DIRETÓRIOS COM GOBUSTER	13](#7.8-enumeração-de-diretórios-com-gobuster)
+[7.8 ENUMERAÇÃO DE DIRETÓRIOS COM GOBUSTER]
 
-[7.9 ACESSO AO DIRETÓRIO /CONFIG/	14](#7.9-acesso-ao-diretório-/config/)
+[7.9 ACESSO AO DIRETÓRIO /CONFIG/]
 
-[7.10 ACESSO AO DIRETÓRIO /CONFIG/DATABASE.PHP.TXT	15](#7.10-acesso-ao-diretório-/config/database.php.txt)
-[ **8\. Recomendações**	17](#8.-conclusão-do-relatório)
+[7.10 ACESSO AO DIRETÓRIO /CONFIG/DATABASE.PHP.TXT] 
 
-[**9\. CONCLUSÃO DO RELATÓRIO**	17](#8.-conclusão-do-relatório)
+[7.11 SQLMAP/ACESSO AO BACO DE DADOS]
+
+[7.12 PANEL]
+
+[7.13 ACESSO AO BANCO DE DADOS]
+
+[ **8\. Recomendações**]
+
+[**9\. CONCLUSÃO DO RELATÓRIO**]
 
 # 
 
 
-# **1\. ESCOPO** {#1.-escopo}
+# **1\. ESCOPO** 
 
 A equipe foi designada para conduzir um Penetration Test no ambiente CTF educacional disponibilizado em:
 
@@ -97,7 +104,7 @@ Escopo técnico incluído:
 
 ---
 
-# **2\. OBJETIVO DA PESQUISA** {#2.-objetivo-da-pesquisa}
+# **2\. OBJETIVO DA PESQUISA** 
 
 A pesquisa teve como finalidade:
 
@@ -115,7 +122,7 @@ Este relatório documenta o processo completo, incluindo comandos utilizados e e
 
 ---
 
-# **3\. CONTATO** {#3.-contato}
+# **3\. CONTATO** 
 
 Empresa alvo: TechCorp Solutions  
 Responsável técnico:José Carlos Menezes  
@@ -123,7 +130,7 @@ Finalidade: Exercício acadêmico – Formação em Cibersegurança
 
 ---
 
-# **4\. DECLARAÇÃO DE LIMITE DE RESPONSABILIDADE** {#4.-declaração-de-limite-de-responsabilidade}
+# **4\. DECLARAÇÃO DE LIMITE DE RESPONSABILIDADE** 
 
  Todos os testes foram conduzidos exclusivamente no ambiente autorizado.  
  Nenhum teste foi realizado fora do escopo definido.  
@@ -131,13 +138,13 @@ Finalidade: Exercício acadêmico – Formação em Cibersegurança
 
 ---
 
-# **5\. DATA DOS TESTES** {#5.-data-dos-testes}
+# **5\. DATA DOS TESTES** 
 
 23 a 30 de Novembro de 2025
 
 ---
 
-# **6\. METODOLOGIA UTILIZADA** {#6.-metodologia-utilizada}
+# **6\. METODOLOGIA UTILIZADA** 
 
 A metodologia aplicada seguiu padrões OWASP e PTES:
 
@@ -155,11 +162,11 @@ A metodologia aplicada seguiu padrões OWASP e PTES:
 
 ---
 
-# **7\. EVIDÊNCIAS E VULNERABILIDADES ENCONTRADAS** {#7.-evidências-e-vulnerabilidades-encontradas}
+# **7\. EVIDÊNCIAS E VULNERABILIDADES ENCONTRADAS** 
 
 ---
 
-## **7.1 ACESSO INICIAL AO SITE** {#7.1-acesso-inicial-ao-site}
+## **7.1 ACESSO INICIAL AO SITE** 
 
 A navegação inicial revelou exposição indevida de informações e ausência de controles de segurança fundamentais.
 
@@ -174,7 +181,7 @@ Vulnerabilidade identificada:
 
 ---
 
-## **7.2 EXPOSIÇÃO DE INFORMAÇÃO NO CÓDIGO-FONTE** {#7.2-exposição-de-informação-no-código-fonte}
+## **7.2 EXPOSIÇÃO DE INFORMAÇÃO NO CÓDIGO-FONTE** 
 
 Ao exibir o código-fonte da página (CTRL \+ U), foi encontrada uma flag diretamente no HTML.
 
@@ -190,17 +197,20 @@ Impacto técnico:
 
 Classificação: OWASP A01 – Broken Access Control
 
+
 ![image5](IMG/image5.png)
+
+#
 
 * Outra forma de obter acesso a esse código é pelo : curl 98.95.207.28
 
-![html](TechCorpSolutions\FLAG1\html.png)
+![html](IMG\html.png)
 
 
 
 ---
 
-## **7.3 CREDENCIAIS EXPOSTAS NA TELA DE LOGIN** {#7.3-credenciais-expostas-na-tela-de-login}
+## **7.3 CREDENCIAIS EXPOSTAS NA TELA DE LOGIN** 
 
 O formulário de login apresentava campos de usuário e senha preenchidos automaticamente, permitindo acesso direto ao sistema.
 
@@ -219,7 +229,7 @@ Impactos:
 
 ---
 
-## **7.4 NAVEGAÇÃO INTERNA EXPONDO DADOS SENSÍVEIS** {#7.4-navegação-interna-expondo-dados-sensíveis}
+## **7.4 NAVEGAÇÃO INTERNA EXPONDO DADOS SENSÍVEIS** 
 
 Após o login automático, abas internas revelaram dados que não deveriam estar acessíveis a usuários comuns.
 
@@ -227,13 +237,14 @@ Vulnerabilidade:
 
 * Exposição de conteúdo restrito
 
-* Falha total de controle de permissões internas  
+* Falha total de controle de permissões internas 
+
  ![image7](IMG/image7.png)
 
 
 ---
 
-## **7.5 VARREDURA COM NMAP** {#7.5-varredura-com-nmap}
+## **7.5 VARREDURA COM NMAP** 
 
 Para mapear portas e serviços expostos, foi executado o comando:
 
@@ -257,12 +268,12 @@ Resultado resumido:
 
 ![image9](IMG/image9.png)
 
-![nmap](TechCorpSolutions/scan/nmap.png)
+![nmap](IMG/nmap.png)
 
 
 ---
 
-## **7.6 FLAG E DIRETÓRIOS EXPOSTOS NO ARQUIVO ROBOTS.TXT** {#7.6-flag-e-diretórios-expostos-no-arquivo-robots.txt}
+## **7.6 FLAG E DIRETÓRIOS EXPOSTOS NO ARQUIVO ROBOTS.TXT** 
 
 Ao acessar:
 
@@ -281,11 +292,11 @@ Impacto:
 Classificação: OWASP A06 – Security Misconfiguration
 
 ![image6](IMG/image6.png)
-![robotsFLAG](TechCorpSolutions\FLAG2\robotsFLAG.png)
+![robotsFLAG](/IMG/robotsFLAG.png)
 
 ---
 
-## **7.7 FTP SEM AUTENTICAÇÃO (ANONYMOUS LOGIN)** {#7.7-ftp-sem-autenticação-(anonymous-login)}
+## **7.7 FTP SEM AUTENTICAÇÃO (ANONYMOUS LOGIN)** 
 
 O Nmap indicou que o serviço FTP permitia login anônimo.
 
@@ -312,12 +323,12 @@ Impactos:
 Classificação: CWE-200 – Exposure of Sensitive Information
 
 ![image3](IMG/image3.png)
-![robots](TechCorpSolutions/FLAG2/robots.png)
+![robots](/IMG/robots.png)
 
 
 ---
 
-## **7.8 ENUMERAÇÃO DE DIRETÓRIOS COM GOBUSTER** {#7.8-enumeração-de-diretórios-com-gobuster}
+## **7.8 ENUMERAÇÃO DE DIRETÓRIOS COM GOBUSTER** 
 
 Comando executado:
 
@@ -341,11 +352,11 @@ Impacto:
 
 ![image1](IMG/image1.png)
 
-![gobuster](TechCorpSolutions\scan\gobuster.png)
+![gobuster](/IMG/gobuster.png)
 
 ---
 
-## **7.9 ACESSO AO DIRETÓRIO /CONFIG/** {#7.9-acesso-ao-diretório-/config/}
+## **7.9 ACESSO AO DIRETÓRIO /CONFIG/** 
 
 O diretório estava acessível via navegador sem qualquer restrição.
 
@@ -370,7 +381,7 @@ Impacto:
 ![image10](IMG/image10.png)
 
 
-## **7.10 ACESSO AO DIRETÓRIO /CONFIG/DATABASE.PHP.TXT** {#7.10-acesso-ao-diretório-/config/database.php.txt}
+## **7.10 ACESSO AO DIRETÓRIO /CONFIG/DATABASE.PHP.TXT** 
 
 Foi identificado que o arquivo **/config/database.php.txt** estava acessível diretamente pelo navegador, sem qualquer controle de acesso. O arquivo continha informações sensíveis, incluindo dados internos de configuração e uma flag do ambiente CTF.
 
@@ -395,15 +406,15 @@ Impactos possíveis:
 
 ![image8](IMG/image8.png)
 
-![database](TechCorpSolutions\FLAG3\database.png)
+![database](/IMG/database.png)
 
 ## **7.11 SQLMAP/ACESSO AO BACO DE DADOS** 
 
 * Durante a análise do endpoint /login.php, foi utilizada a ferramenta SQLMAP para verificar a presença de SQL Injection no parâmetro username. O teste foi executado a partir do formulário detectado.
-![Database](TechCorpSolutions\FLAG4E5\dadosDatabase.png)
+![Database](/IMG/dadosDatabase.png)
 
 Após confirmar a vulnerabilidade, o SQLMAP foi autorizado a explorar o banco de dados.
-![DatabaseFlag](TechCorpSolutions\FLAG4E5\DatabaseFlag.png)
+![DatabaseFlag](/IMG/DatabaseFlag.png)
 
 ## **7.12 PANEL** 
 * Após o scan utilizando a ferramenta gobuster , o acesso ao diretório panel.php estava liberado já que a 
@@ -418,21 +429,21 @@ porta estava aberta:
 
 * Funcionalidade interna ficou completamente exposta.
 
-![panel](TechCorpSolutions\FLAG7\panel.png)
+![panel](/IMG/panel.png)
 
 ## **7.13 ACESSO AO BANCO DE DADOS**
 
 * Após o acesso ao database.php.txt as credenciais necessarias para o acesso ao banco de dados 
 foram explorados:
 
-![loginDatabase](TechCorpSolutions\FLAG8\loginDatabase.png)
+![loginDatabase](/IMG/loginDatabase.png)
 
 * Tendo acesso aos arquivos sensitive_info
 * Esse acesso permitiu leitura direta de tabelas críticas, expondo informações sensíveis, credenciais internas e dados de configuração essenciais para o funcionamento da aplicação.
 
-![views](TechCorpSolutions\FLAG8\views.png)
+![views](/IMG/views.png)
 
-![sensitive_info](TechCorpSolutions\FLAG8\sensitive_info.png)
+![sensitive_info](/IMG/sensitive_info.png)
 
 ### **8. Recomendações**
 
