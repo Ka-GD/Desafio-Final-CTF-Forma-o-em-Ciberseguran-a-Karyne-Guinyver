@@ -204,7 +204,7 @@ Classificação: OWASP A01 – Broken Access Control
 
 * Outra forma de obter acesso a esse código é pelo : curl 98.95.207.28
 
-![html](IMG\html.png)
+![html](IMG/html.png)
 
 
 
