@@ -56,8 +56,9 @@ O presente relatório não deve ser enviado por e-mail, fax ou qualquer outro me
 [7.9 ACESSO AO DIRETÓRIO /CONFIG/	14](#7.9-acesso-ao-diretório-/config/)
 
 [7.10 ACESSO AO DIRETÓRIO /CONFIG/DATABASE.PHP.TXT	15](#7.10-acesso-ao-diretório-/config/database.php.txt)
+[ **8\. Recomendações**	17](#8.-conclusão-do-relatório)
 
-[**8\. CONCLUSÃO DO RELATÓRIO**	17](#8.-conclusão-do-relatório)
+[**9\. CONCLUSÃO DO RELATÓRIO**	17](#8.-conclusão-do-relatório)
 
 # 
 
@@ -132,7 +133,7 @@ Finalidade: Exercício acadêmico – Formação em Cibersegurança
 
 # **5\. DATA DOS TESTES** {#5.-data-dos-testes}
 
-23 a 28 de Novembro de 2025
+23 a 30 de Novembro de 2025
 
 ---
 
@@ -190,6 +191,11 @@ Impacto técnico:
 Classificação: OWASP A01 – Broken Access Control
 
 ![image5](IMG/image5.png)
+
+* Outra forma de obter acesso a esse código é pelo : curl 98.95.207.28
+
+![html](TechCorpSolutions\FLAG1\html.png)
+
 
 
 ---
@@ -251,6 +257,8 @@ Resultado resumido:
 
 ![image9](IMG/image9.png)
 
+![nmap](TechCorpSolutions/scan/nmap.png)
+
 
 ---
 
@@ -273,7 +281,7 @@ Impacto:
 Classificação: OWASP A06 – Security Misconfiguration
 
 ![image6](IMG/image6.png)
-
+![robotsFLAG](TechCorpSolutions\FLAG2\robotsFLAG.png)
 
 ---
 
@@ -304,6 +312,7 @@ Impactos:
 Classificação: CWE-200 – Exposure of Sensitive Information
 
 ![image3](IMG/image3.png)
+![robots](TechCorpSolutions/FLAG2/robots.png)
 
 
 ---
@@ -332,6 +341,7 @@ Impacto:
 
 ![image1](IMG/image1.png)
 
+![gobuster](TechCorpSolutions\scan\gobuster.png)
 
 ---
 
@@ -385,8 +395,78 @@ Impactos possíveis:
 
 ![image8](IMG/image8.png)
 
+![database](TechCorpSolutions\FLAG3\database.png)
 
-### **8\. CONCLUSÃO DO RELATÓRIO** {#8.-conclusão-do-relatório}
+## **7.11 SQLMAP/ACESSO AO BACO DE DADOS** 
+
+* Durante a análise do endpoint /login.php, foi utilizada a ferramenta SQLMAP para verificar a presença de SQL Injection no parâmetro username. O teste foi executado a partir do formulário detectado.
+![Database](TechCorpSolutions\FLAG4E5\dadosDatabase.png)
+
+Após confirmar a vulnerabilidade, o SQLMAP foi autorizado a explorar o banco de dados.
+![DatabaseFlag](TechCorpSolutions\FLAG4E5\DatabaseFlag.png)
+
+## **7.12 PANEL** 
+* Após o scan utilizando a ferramenta gobuster , o acesso ao diretório panel.php estava liberado já que a 
+porta estava aberta:
+
+/logout.php       	(Status: 302) [Size: 0] [--> index.php]
+**/panel.php        	(Status: 200) [Size: 1196]**
+/robots.txt       	(Status: 200) [Size: 169]
+/robots.txt       	(Status: 200) [Size: 169]
+
+* Falha de controle de acesso permitiu visualização direta do painel administrativo.
+
+* Funcionalidade interna ficou completamente exposta.
+
+![panel](TechCorpSolutions\FLAG7\panel.png)
+
+## **7.13 ACESSO AO BANCO DE DADOS**
+
+* Após o acesso ao database.php.txt as credenciais necessarias para o acesso ao banco de dados 
+foram explorados:
+
+![loginDatabase](TechCorpSolutions\FLAG8\loginDatabase.png)
+
+* Tendo acesso aos arquivos sensitive_info
+* Esse acesso permitiu leitura direta de tabelas críticas, expondo informações sensíveis, credenciais internas e dados de configuração essenciais para o funcionamento da aplicação.
+
+![views](TechCorpSolutions\FLAG8\views.png)
+
+![sensitive_info](TechCorpSolutions\FLAG8\sensitive_info.png)
+
+### **8. Recomendações**
+
+Principais medidas recomendadas:
+
+1. Remover diretórios sensíveis da web
+
+Excluir ou proteger /admin, /backup, /old, /private.
+
+2. Proibir FTP e migrar para SFTP
+
+FTP não é seguro; use SSH/SFTP.
+
+3. Implementar WAF e validação server-side
+
+Para mitigar SQL Injection.
+
+4. Sanitização completa de inputs
+
+Aplicar prepared statements.
+
+5. Remover credenciais do código-fonte
+
+Nunca deixar segredos no front-end.
+
+6. Autenticação forte no painel administrativo
+
+Com MFA e rate-limiting.
+
+7. Manter backups fora do diretório público
+
+Backups nunca devem ficar acessíveis da web.
+
+### **9\. CONCLUSÃO DO RELATÓRIO** {#9.-conclusão-do-relatório}
 
 Os testes realizados no ambiente CTF mostraram diversas vulnerabilidades críticas que permitiram acesso a informações internas, arquivos sensíveis, diretórios expostos e serviços mal configurados. A combinação dessas falhas demonstrou que qualquer usuário externo poderia comprometer o sistema sem dificuldade, revelando ausência de controles de acesso, falhas de autenticação e má configuração geral do servidor.
 
